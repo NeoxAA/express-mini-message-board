@@ -3,3 +3,9 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  each val in messages
+    .message-container 
+      h2.user-name #{val.user}
+      p.user-message #{val.text}
+      p.message-date #{val.added}
+  a.new-message-link(href='/new') Write a new message

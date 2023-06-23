@@ -1,8 +1,44 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 17px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+p.error-message {
+  color: red;
+}
+
+a.new-message-link {
+  display: block;
+  margin-top: 40px;
+  background-color: #00B7FF;
+  color:#fff;
+  width: fit-content;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+form.message-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  font-family: inherit;
+}
+
+form.message-form > * {
+  margin-bottom: 10px;
+}
+
+form.message-form input, textarea {
+  font-family: inherit;
+}
+
+button.submit-button {
+  background-color: #000000;
+  color:#fff;
+  padding: 5px 10px;
+  text-decoration: none;
 }

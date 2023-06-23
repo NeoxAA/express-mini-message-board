@@ -1,0 +1,10 @@
+extends layout
+
+block content 
+    h1= title 
+    form.message-form(method="POST" action="/new")
+        input(type="text", name="user", value="", placeholder="Your name").name 
+        textarea(type="text", name="message", value="", placeholder="Message").message
+        button.submit-button(type="submit" value="input textarea") SUBMIT MESSAGE
+    p.error-message= errorMessage
+    a.new-message-link(href='/') View messages
