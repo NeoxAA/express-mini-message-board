@@ -20,13 +20,13 @@ router.get('/', function(req, res, next) {
       console.error(err.message);
       res.send({error:err});
     } else {
-      res.render('index', {title: "Mini Message Board", messages:rows})
+      res.render('index', {title: "Mini Message Board", messages:rows, description: 'Mini Message Board chat created by Asam Afzal.'})
     }
   });
 });
 
 router.get('/new', function(req,res,next) {
-  res.render('form', {title: "Mini Message Board"} )
+  res.render('form', {title: "Mini Message Board", description: 'Send a new message to the Mini Message Board chat.'} )
 });
 
 router.post("/new", function(req,res,next){

@@ -9,6 +9,17 @@ body {
   align-items: center;
   margin: 20px 0;
 }
+
+@media screen and (max-width:470px) {
+  .site-logo {
+    flex-direction: column;
+  }
+  h1 {
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
 .site-logo img {
   margin-right: 10px;
 }
