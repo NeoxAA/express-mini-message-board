@@ -1,6 +1,65 @@
 body {
-  padding: 50px;
   font: 17px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.site-logo img {
+  margin-right: 10px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chat-container {
+  width: 100%;
+  padding: 20px;
+  border: solid 1px #d3d3d3;
+  border-radius: 5px;
+}
+
+.message-container {
+  margin-bottom: 20px;
+}
+
+.message {
+  background: #f1f1f1;
+  padding: 15px 20px;
+  border-radius: 20px;
+  width: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.message p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 10px;
+}
+
+
+h2.user-name {
+  font-size: 14px;
+}
+
+p.message-date {
+  font-size: 14px;
+  margin-left: 10px;
 }
 
 a {
@@ -13,32 +72,68 @@ p.error-message {
 
 a.new-message-link {
   display: block;
-  margin-top: 40px;
-  background-color: #00B7FF;
-  color:#fff;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   width: fit-content;
-  padding: 5px 10px;
+  align-self: center;
+  font-size: 14px;
+  margin-top: 40px;
+  background-color: #222;
+  border: solid 1px #222;
+  color: #fff;
+  padding: 10px 15px;
   text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+a.new-message-link:hover {
+  background-color: #3d3d3d;
+  border: solid 1px #3d3d3d;
 }
 
 form.message-form {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 500px;
   font-family: inherit;
+  padding: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 5px;
 }
 
 form.message-form > * {
   margin-bottom: 10px;
 }
 
+form.message-form h2 {
+  align-self: center;
+  margin-bottom: 20px;
+}
+
 form.message-form input, textarea {
   font-family: inherit;
+  padding: 5px;
 }
 
 button.submit-button {
-  background-color: #000000;
-  color:#fff;
-  padding: 5px 10px;
+  display: block;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: fit-content;
+  align-self: center;
+  font-size: 14px;
+  margin-top: 20px;
+  background-color: #222;
+  border: solid 1px #222;
+  color: #fff;
+  padding: 10px 15px;
   text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button.submit-button:hover {
+  background-color: #3d3d3d;
+  border: solid 1px #3d3d3d;
 }

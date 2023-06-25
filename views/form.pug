@@ -2,9 +2,11 @@ extends layout
 
 block content 
     h1= title 
+    
     form.message-form(method="POST" action="/new")
+        h2= "Send new message"
         input(type="text", name="user", value="", placeholder="Your name").name 
-        textarea(type="text", name="message", value="", placeholder="Message").message
+        textarea(type="text", name="message", value="", placeholder="Message" rows="5").message-area
         button.submit-button(type="submit" value="input textarea") SUBMIT MESSAGE
     p.error-message= errorMessage
-    a.new-message-link(href='/') View messages
+    a.new-message-link(href='/') VIEW MESSAGES

@@ -1,11 +1,21 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  each val in messages
-    .message-container 
-      h2.user-name #{val.user}
-      p.user-message #{val.text}
-      p.message-date #{val.added}
-  a.new-message-link(href='/new') Write a new message
+  .site-logo
+    img(src='images/mini-message-board-logo.svg' alt='Mini Message Board Logo' style='width:75px; height:75px;')
+    h1= title
+  .chat-container 
+    each val in messages
+      .message-container 
+        .message
+          p.user-message #{val.text}
+
+        .author-info
+          h2.user-name #{val.user}
+          - let date = new Date(val.added)
+          - let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+          - let formattedDate = monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear() + " -   " + date.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
+          p.message-date #{formattedDate}
+
+
+    a.new-message-link(href='/new') Write a new message

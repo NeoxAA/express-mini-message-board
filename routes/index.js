@@ -1,12 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+var Filter = require('bad-words'),
+filter = new Filter();
+
 const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date()
-  },
   {
     text: "Hello World!",
     user: "Charles",
@@ -21,17 +19,18 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new', function(req,res,next) {
-  res.render('form', {title: "Add new message"} )
+  res.render('form', {title: "Mini Message Board"} )
 });
 
 router.post("/new", function(req,res,next){
   if (req.body.user && req.body.message) {
-    messages.push({text:req.body.message, user:req.body.user, added:new Date()});
+    let cleanMessage = filter.clean(req.body.message);
+    messages.push({text: cleanMessage, user: req.body.user, added: new Date()});
     res.redirect('/')
   }
   else {
     console.error("Missing fields");
-    res.render('form', {title: "Add new message", errorMessage: "Missing fields"});
+    res.render('form', {title: "Mini Message Board", errorMessage: "Missing fields"});
   }
 
 })
