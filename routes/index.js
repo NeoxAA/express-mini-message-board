@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let mysql = require('mysql');
+require('dotenv').config();
 var Filter = require('bad-words'),
 filter = new Filter();
 
